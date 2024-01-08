@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Request Form</title>
+</head>
+<body>
+    <h2>Product Request Form</h2>
+
+    <form method="post" action="{% url 'car_request' %}">
+        {% csrf_token %}
+
+        <label for="product_name">car Name:</label>
+        <input type="text" name="name" value="{{}}">
+
+         <label for="description">details:</label>
+        <input type="text" name="details" required>
+
+         <label for="description">price:</label>
+        <input type="text" name="price" required>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>
